@@ -951,7 +951,7 @@ func SendInput(inputs []INPUT) uint32 {
 
 func FindWindow(wname string) HWND {
     ret,_ := procFindWindow.Call(
-        nil,
+        uintptr(nil),
         uintptr(unsafe.Pointer(syscall.StringToUTF16Ptr(wname))),
     )
     return ret
